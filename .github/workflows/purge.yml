@@ -1,0 +1,25 @@
+name: Auto PURGE Every 10 Seconds
+
+# Workflow bisa dijalankan manual atau setiap push ke main branch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350  # Workflow maksimal berjalan 350 menit (~5 jam 50 menit)
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Buat script purge.sh executable
+      - name: Make purge.sh executable
+        run: chmod +x purge.sh
+
+      # Step 3: Jalankan script loop PURGE
+      - name: Start 10-second PURGE loop
+        run: ./purge.sh
