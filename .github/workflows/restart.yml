@@ -1,0 +1,16 @@
+name: Auto Restart PURGE Workflow
+
+# Jalankan otomatis setiap 5 menit
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  restart:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Auto PURGE workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: "Auto PURGE Every 5 Seconds"
+          ref: main
