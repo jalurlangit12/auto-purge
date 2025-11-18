@@ -6,7 +6,7 @@ on:
 jobs:
   purge:
     runs-on: ubuntu-latest
-    timeout-minutes: 350  # maksimal ~5 jam 50 menit
+    timeout-minutes: 350  # Max ~5 jam 50 menit per run
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
