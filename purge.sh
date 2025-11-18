@@ -2,6 +2,6 @@
 
 while true; do
     echo "Running PURGE at $(date)"
-    curl -X PURGE https://legacychristianschools.org/
-    sleep 5   # setiap 5 detik
+    curl -v -X PURGE https://legacychristianschools.org/ --max-time 10
+    sleep 5
 done
