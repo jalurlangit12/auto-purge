@@ -1,6 +1,6 @@
 name: Auto Restart PURGE Workflow
 
-# Jalankan otomatis setiap 5 menit
+# Trigger setiap 5 menit untuk restart workflow utama
 on:
   schedule:
     - cron: "*/5 * * * *"
